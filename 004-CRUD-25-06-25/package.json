@@ -1,17 +1,14 @@
 {
-  "name": "crud",
+  "name": "004-crud-25-06-25",
   "version": "1.0.0",
-  "type": "module",
-  "main": "SRC/server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node SRC/server.js",
-    "dev": "nodemon SRC/server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Buri ashok kumar",
+  "author": "",
   "license": "ISC",
-  "description": "this project involves the basic tutorial of express js, mongo DB",
+  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
