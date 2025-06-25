@@ -5,15 +5,13 @@ const todoSchema = mongoose.Schema({
         type : String,
         required : true
     },
-    description : {
-        type : String
+    description: {
+        type: String
     },
-    Name : {
-        type : String
-    },
-    completed : {
-        type : Boolean,
-        default : false
+    completed: {
+        type: Boolean,
+        default: false
     }
 })
-export const todo = mongoose.model('todo', todoSchema);
+
+export const Todo = mongoose.model('Todo', todoSchema);
