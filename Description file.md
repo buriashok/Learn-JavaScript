@@ -1,53 +1,5 @@
-clone a repository
-git clone link
 
-Add file to stagging
-
-#Add specific file
-git add filename
-
-#Add all changed files in current directory
-git add .
-
-
-Commit staged files
-git commit -m "your commit message"
-
-Create a new branch
-git branch new-branch-name
-
-switch to another branch
-git switch branch-name
-
-create and switch to new branch
-git switch -c new-branch-name
-
-merge changes to main branch
-git switch main
-git merge branch-name
-
-delete a branch
-#deletes local branch (if merged)
-git branch -d main
-#Force delete local branch
-git branch -D main
-
-push changes to remote repository
-#push current branch
-git push origin brach-name
-First time push for a new branch:
-git push -u origin branch-name # Set upstream tracking branch
-Pull latest changes from remote
-git pull origin branch-name
-See current status
-git status
-See commit history
-git log
-Rename a branch
-git branch -m new-name
-Check remotes
-git remote -v
-Add a new remote (if needed)
+a new remote (if needed)
 git remote add origin https://github.com/user/repo.git
 Undo changes (careful!)
 git restore filename # Undo local changes (unstaged)
