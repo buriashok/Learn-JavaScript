@@ -69,4 +69,3 @@ typings/
 /dataSources.local.xml
 # Environment variables
 .env*
-
