@@ -1,0 +1,1 @@
+1.[from zero to hero full stack 2:19:21 --- 30/06/2025](https://youtu.be/H3XIJYEPdus?si=mai3xjA3i6lEeGRX)
