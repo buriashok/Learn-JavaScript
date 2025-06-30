@@ -1,4 +1,4 @@
-// code - 1
+// code - 1 (console)
 /*
 console.log("Hello World");
 console.log({name: "Ashok"});
@@ -8,7 +8,7 @@ console.clear();
 console.log("hi this is ashok");
 */
 
-// code - 2
+// code - 2 (variables)
 /*
 // variables
 // declare 
@@ -23,7 +23,7 @@ console.log(`${name}, ${whatDoYouWannaBecomeInYourLife}, ${gender}, ${twitterHan
 console.log(name,",",whatDoYouWannaBecomeInYourLife,",",gender,",",twitterHandle);
 */
 
-// code - 3
+// code - 3 (data types)
 /*
 // primitive data types
 // 1.number
@@ -45,7 +45,7 @@ console.log(firstFavNum / secondFavNum);
 console.log(firstFavNum**5);
 */
 
-// code - 4
+// code - 4 (Boolean data types)
 /*
 // Boolean data types --> true or false
 let isTrue = true;
@@ -64,7 +64,7 @@ console.log(favNumb);
 console.log( favNumb + undefined );
 */
 
-// code - 5
+// code - 5 (comparsion Operators)
 /*
 Comparison Operators
 1. Relational Operators
@@ -93,7 +93,7 @@ console.log(firstFavNumb == secondFavNumb);
 console.log(firstFavNumb != secondFavNumb);
 */
 
-// code - 6
+// code - 6 (Strings)
 /*
 // Strings
 let s1 = "   apple  ";
