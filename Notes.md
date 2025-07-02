@@ -25,29 +25,8 @@ typeof --> tells the type of the data type
 - null vs undefined
 1. history -c  ==> to delete current session terminal history.
 2. 
-### **frequent git commands**
 
-* git clone link
-* git remote add origin link
-* git add .
-* git commit -m "your commit message"
-* git branch new-branch-name
-* git switch branch-name
-* git switch main
-* git merge branch-name
-* git branch -d main
-* git push origin brach-name
-* git push -u origin branch-name
-* git push
-* git pull origin branch-name
-* git pull
-* git status
-* git log
-* git branch -m new-name
-* git remote -v
-* git restore filename # Undo local changes (unstaged)
-* git reset HEAD filename # Unstage file
-* git reset --hard # Discard all local changes (DANGEROUS)
+
 
 Complete notes
 What is Upstream in Git (GitHub)?
