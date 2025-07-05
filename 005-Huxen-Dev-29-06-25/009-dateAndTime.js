@@ -28,5 +28,23 @@
 // console.log(date);
 
 //setIntervel
-setInterval( () => console.log(`This function will be execute every 2 seconds`),2000
-);
+// setInterval( () => console.log(`This function will be execute every 2 seconds`),2000
+// );
+
+//setTimeOut
+// setTimeout( function () {
+//     console.log(`this function will run after 3 seconds`);
+// },3000);
+
+//clearInterval();
+
+const intervalId = setInterval(function () {
+    console.log(`This function is being executed at the interval`);
+}, 1000);
+
+// Stop the interval after 10 seconds
+
+setTimeout(function () {
+    clearInterval(intervalId);
+    console.log(`Interval Stopped`);
+}, 10000);
