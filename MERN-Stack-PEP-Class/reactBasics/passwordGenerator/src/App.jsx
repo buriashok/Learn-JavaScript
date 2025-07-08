@@ -1,4 +1,4 @@
-import { useCallback,useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -6,23 +6,27 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
+  const copyPasswordToClipboard = useCallback(() => {
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
+
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (numberAllowed) str = str + "0123456789";
     if (charAllowed) str = str + "!@#$%^&*()_+(){}|<>?/*-";
 
-    for (let i = 0; i < length; i++) {
-      let char = Math.floor(Math.random * str.length + 1);
+    for (let i = 1; i <= length; i++) {
+      let char = Math.floor(Math.random() * str.length);
       pass += str.charAt(char);
     }
 
     setPassword(pass);
-  }, [length, numberAllowed, charAllowed, setPassword]);
+  }, [length, numberAllowed, charAllowed]);
 
   useEffect(() => {
     passwordGenerator();
-  }, [length, numberAllowed, charAllowed, setPassword]);
+  }, [length, numberAllowed, charAllowed, passwordGenerator]);
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4">
@@ -39,7 +43,10 @@ function App() {
             className="w-full p-3 text-lg bg-gray-800 text-white outline-none"
             placeholder="Generated password"
           />
-          <button className="bg-orange-400 hover:bg-orange-600 text-white px-4 text-sm font-semibold transition">
+          <button
+            onClick={copyPasswordToClipboard}
+            className="bg-orange-400 hover:bg-orange-600 text-white px-4 text-sm font-semibold transition"
+          >
             Copy
           </button>
         </div>
