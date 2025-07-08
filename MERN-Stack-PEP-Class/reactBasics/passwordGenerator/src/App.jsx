@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 function App() {
   const [length, setLength] = useState(8);
@@ -6,15 +6,14 @@ function App() {
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword] = useState("");
 
-  const copyPasswordToClipboard = useCallback(() => {
-    window.navigator.clipboard.writeText(password);
-  }, [password]);
+  const passwordRef = useRef(null);
 
   const passwordGenerator = useCallback(() => {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    if (numberAllowed) str = str + "0123456789";
-    if (charAllowed) str = str + "!@#$%^&*()_+(){}|<>?/*-";
+
+    if (numberAllowed) str += "0123456789";
+    if (charAllowed) str += "!@#$%^&()_-+={}[]~`/?";
 
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length);
@@ -24,12 +23,18 @@ function App() {
     setPassword(pass);
   }, [length, numberAllowed, charAllowed]);
 
+  const copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select();
+    passwordRef.current?.setSelectionRange(0, 20);
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
+
   useEffect(() => {
     passwordGenerator();
-  }, [length, numberAllowed, charAllowed, passwordGenerator]);
+  }, [length, numberAllowed, charAllowed]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4">
+    <div className="min-h-screen min-w-screen bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-4">
       <div className="w-full max-w-md bg-gray-700 rounded-2xl shadow-2xl p-6 space-y-6">
         <h1 className="text-3xl font-bold text-center text-orange-400">
           🔐 Password Generator
@@ -39,13 +44,14 @@ function App() {
           <input
             type="text"
             value={password}
+            ref={passwordRef}
             readOnly
             className="w-full p-3 text-lg bg-gray-800 text-white outline-none"
             placeholder="Generated password"
           />
           <button
             onClick={copyPasswordToClipboard}
-            className="bg-orange-400 hover:bg-orange-600 text-white px-4 text-sm font-semibold transition"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-4 text-sm font-semibold transition"
           >
             Copy
           </button>
