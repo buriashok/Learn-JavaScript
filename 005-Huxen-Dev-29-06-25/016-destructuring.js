@@ -24,7 +24,6 @@
 // console.log(a);
 // console.log(b);
 
-
 //ignoreing the return values
 // function f() {
 //     return [1,2,3];
@@ -34,7 +33,7 @@
 // console.log(a);
 // console.log(b);
 
-//Assigning the rest of an array to a variable 
+//Assigning the rest of an array to a variable
 
 // const [a, ...b] = ["one", "two", "three", true, 12, ["one"]];
 // console.log(b);
@@ -53,7 +52,6 @@
 // console.log(name);
 // console.log(position);
 
-
 //renaming
 // const num = { x: 100, y: 200};
 // const { x: new1, y: new2} = num;
@@ -61,7 +59,7 @@
 // console.log(new1);
 // console.log(new2);
 
-// Object destructing and rest operator 
+// Object destructing and rest operator
 // let {a,b, ...rest} = {a: 100, b: 200, c: 300, d: 400, e: 500};
 // console.log(a);
 // console.log(b);
@@ -69,13 +67,15 @@
 
 // function desctruing in JavaScript
 const person = {
-    name: "john doe",
-    age: 20,
-    country: "USA",
+  name: "john doe",
+  age: 20,
+  country: "USA",
 };
 
-function printPersonInfo(person){
-    console.log(`Name: ${name}`);
-    console.log(`Age: ${age}`);
-    console.log(`Country: ${country}`);
+function printPersonInfo({name, age, country}) {
+  console.log(`Name: ${name}`);
+  console.log(`Age: ${age}`);
+  console.log(`Country: ${country}`);
 }
+
+printPersonInfo(person);
