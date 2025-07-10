@@ -5,12 +5,18 @@
  * For arrays, it is better to use a "for...of" loop or a traditional for loop.
 */
 
-let person = {
-    name : "John",
-    age : 19,
-    gender : "male",
-};
+// let person = {
+//     name : "John",
+//     age : 19,
+//     gender : "male",
+// };
 
-for(let keys in person) {
-    console.log(keys,person[keys]);
+// for(let keys in person) {
+//     console.log(keys,person[keys]);
+// }
+
+let list = [ "Apple", "Orange", "Grapes"];
+
+for(let index in list ){
+    console.log(`${index} : ${list[index]}`);
 }
