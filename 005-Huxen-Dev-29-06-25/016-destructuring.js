@@ -66,16 +66,118 @@
 // console.log(rest);
 
 // function desctruing in JavaScript
-const person = {
-  name: "john doe",
-  age: 20,
-  country: "USA",
+// const person = {
+//   name: "john doe",
+//   age: 20,
+//   country: "USA",
+// };
+
+// function printPersonInfo({name, age, country}) {
+//   console.log(`Name: ${name}`);
+//   console.log(`Age: ${age}`);
+//   console.log(`Country: ${country}`);
+// }
+
+// printPersonInfo(person);
+
+// let options = {
+//   title: "My Menu",
+//   items: ["item1", "item2"],
+// };
+
+// function showMenu({
+//   title = "UNtitled",
+//   width: w = 100,
+//   height: h = 200,
+//   items: [item1, item2]= [item1, item2],
+// }){
+//   console.log(`${title} - ${w}x ${h} `);
+//   console.log(item1);
+//   console.log(item2);
+// }
+
+// showMenu(options);
+
+// Nested destructuring
+// const songs = [
+//   { name: "lucky you", singer: "Joyner", duration: "3:45" },
+//   { name: "Godzilla", singer: "Eminem", duration: "4:30" },
+//   { name: "Rap God", singer: "Eminem", duration: "6:00" },  
+//   { name: "Lose Yourself", singer: "Eminem", duration: "5:20" },  
+// ];
+
+// const [,,, {singer: s }] = songs;
+// console.log(s);
+
+// destructure mixing.
+const data = {
+  user: {
+    id: 123,
+    name: "John Doe",
+    age: 30,
+    email: "john.doe@example.com",
+    address: {
+      city: "New York",
+      country: "USA",
+    },
+    hobbies: ["Reading", "Painting", "Cooking"],
+    scores: {
+      math: 95,
+      science: 88,
+      history: 75,
+    },
+  },
+  products: [
+    { id: 1, name: "Laptop", price: 1000 },
+    { id: 2, name: "Phone", price: 800 },
+    { id: 3, name: "Tablet", price: 500 },
+  ],
+  settings: {
+    darkMode: true,
+    notifications: {
+      email: true,
+      sms: false,
+      push: true,
+    },
+    language: "English",
+  },
 };
 
-function printPersonInfo({name, age, country}) {
-  console.log(`Name: ${name}`);
-  console.log(`Age: ${age}`);
-  console.log(`Country: ${country}`);
-}
+// Extracting data using object destructuring
+const {
+  user: {
+    name,
+    age,
+    address: { city, country },
+    hobbies,
+    scores: { math, science, history },
+    email,
+  },
+  products: [product1, product2, product3],
+  settings: {
+    darkMode,
+    notifications: {
+      email: emailNotifications,
+      sms: smsNotifications,
+      push: pushNotifications,
+    },
+    language,
+  },
+} = data;
 
-printPersonInfo(person);
+// Logging the extracted data using template literals
+console.log(`Name: ${name}`);
+console.log(`Age: ${age}`);
+console.log(`Address: ${city}, ${country}`);
+console.log(`Hobbies: ${hobbies.join(", ")}`);
+console.log(`Math Score: ${math}`);
+console.log(`Science Score: ${science}`);
+console.log(`History Score: ${history}`);
+console.log(`Product 1: ${product1.name} - $${product1.price}`);
+console.log(`Product 2: ${product2.name} - $${product2.price}`);
+console.log(`Product 3: ${product3.name} - $${product3.price}`);
+console.log(`Dark Mode: ${darkMode}`);
+console.log(`Email Notifications: ${emailNotifications}`);
+console.log(`SMS Notifications: ${smsNotifications}`);
+console.log(`Push Notifications: ${pushNotifications}`);
+console.log(`Language: ${language}`);
